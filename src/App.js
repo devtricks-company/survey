@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import QuestionTitle from './component/Question/QuestionTitle';
 import Question from './component/Question/Question';
-
+import "antd/dist/antd.css";
 
 
 function App() {
@@ -31,11 +31,14 @@ function App() {
     <div className="App">
           {questions.map(question =>
             <>
+               <div className="container">
               <QuestionTitle title={question.questionTitle} />
               {question.allQuestion.map(sQuestion => 
                 
                 <Question questionNumber={sQuestion.questionNumber} question={sQuestion.qustion} questionType={sQuestion.questionType} answers={sQuestion.answers} />
                 )}
+
+               </div>
             </>
             )}
     </div>
